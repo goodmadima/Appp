@@ -1,0 +1,16 @@
+PODS:
+  - CarrotquestSDK (2.7.2)
+
+DEPENDENCIES:
+  - CarrotquestSDK
+
+SPEC REPOS:
+  trunk:
+    - CarrotquestSDK
+
+SPEC CHECKSUMS:
+  CarrotquestSDK: 05c98353422921aaac3a51b6cbc969d4ae3dee5f
+
+PODFILE CHECKSUM: e12191c3206f700d80e9d3b52c0ab7ee7fd01230
+
+COCOAPODS: 1.11.3

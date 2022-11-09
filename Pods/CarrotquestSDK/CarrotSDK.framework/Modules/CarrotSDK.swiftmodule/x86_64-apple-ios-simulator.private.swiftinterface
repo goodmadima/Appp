@@ -1,0 +1,193 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CarrotSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
+@_exported import CarrotSDK
+import Combine
+import CommonCrypto
+import CoreFoundation
+import CoreGraphics
+import Darwin
+import Dispatch
+import Dispatch/*.DispatchTimeInterval*/
+import Foundation
+import Foundation/*.BlockOperation*/
+import Foundation/*.Data*/
+import Foundation/*.Date*/
+import Foundation/*.DateFormatter*/
+import Foundation/*.HTTPURLResponse*/
+import Foundation/*.IndexPath*/
+import Foundation/*.JSONSerialization*/
+import Foundation/*.NSCopying*/
+import Foundation/*.NSError*/
+import Foundation/*.NSLock*/
+import Foundation/*.NSNull*/
+import Foundation/*.NSNumber*/
+import Foundation/*.NSObject*/
+import Foundation/*.NSRecursiveLock*/
+import Foundation/*.NSURLErrorCancelled*/
+import Foundation/*.NSURLErrorDomain*/
+import Foundation/*.NSValue*/
+import Foundation/*.Notification*/
+import Foundation/*.NotificationCenter*/
+import Foundation/*.Operation*/
+import Foundation/*.OperationQueue*/
+import Foundation/*.Thread*/
+import Foundation/*.TimeInterval*/
+import Foundation/*.URL*/
+import Foundation/*.URLRequest*/
+import Foundation/*.URLResponse*/
+import Foundation/*.URLSession*/
+import Foundation/*.arc4random*/
+import Foundation/*.objc_getAssociatedObject*/
+import Foundation/*.objc_setAssociatedObject*/
+import MobileCoreServices
+import Foundation.NSObject
+import ObjectiveC
+import Photos
+import QuartzCore
+import Security
+import Swift
+import SystemConfiguration
+import UIKit.UIImage
+import UIKit
+import UIKit.UIViewController
+import UIKit.UIWindow
+import UserNotifications
+import WebKit
+import _Concurrency
+import _StringProcessing
+import os.log
+import os
+import zlib
+open class UserProperty : Swift.Codable {
+  public enum Operations : Swift.String, Swift.Codable {
+    case updateOrCreate
+    case setOnce
+    case add
+    case delete
+    case append
+    case union
+    case exclude
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  final public let operation: CarrotSDK.UserProperty.Operations
+  final public let key: Swift.String
+  final public let value: Swift.String
+  public init(key: Swift.String, value: Swift.String, operation: CarrotSDK.UserProperty.Operations = .updateOrCreate)
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class CarrotNotificationService {
+  public static let shared: CarrotSDK.CarrotNotificationService
+  public func setToken(_ token: Swift.String)
+  public func deleteToken()
+  public func show(_ notification: UserNotifications.UNNotification, appGroudDomain domain: Swift.String? = nil, completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  public func clickNotification(notificationResponse response: UserNotifications.UNNotificationResponse)
+  public func canHandle(_ notification: UserNotifications.UNNotification) -> Swift.Bool
+  public func canHandle(_ response: UserNotifications.UNNotificationResponse) -> Swift.Bool
+  public func isShownEarlier(_ notification: UserNotifications.UNNotification, appGroudDomain domain: Swift.String? = nil, _ completionHandler: @escaping (_ value: Swift.Bool) -> Swift.Void)
+  public func deleteDuplicateNotification(withContent content: UserNotifications.UNMutableNotificationContent, appGroudDomain domain: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class Carrot {
+  public enum Theme {
+    case light
+    case dark
+    case fromMobile
+    case fromWeb
+    public static func == (a: CarrotSDK.Carrot.Theme, b: CarrotSDK.Carrot.Theme) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static let shared: CarrotSDK.Carrot
+  final public let version: Swift.String
+  final public let webVersion: () -> Swift.Int
+  public var useEuServer: Swift.Bool
+  public func setBundle(_ bundle: Foundation.Bundle)
+  public func setup(withApiKey key: Swift.String, withTheme theme: CarrotSDK.Carrot.Theme = .light, useEuServer: Swift.Bool = false, withAppGroup appGroup: Swift.String? = nil, isServiceMode: Swift.Bool = false, successHandler: @escaping () -> Swift.Void, errorHandler: @escaping (Swift.String) -> Swift.Void)
+  public func auth(withUserId userId: Swift.String, withUserAuthKey key: Swift.String, successHandler: @escaping () -> Swift.Void, errorHandler: @escaping (Swift.String) -> Swift.Void)
+  public func openChat()
+  public func closeChat()
+  public func logout(successHandler: @escaping () -> Swift.Void, errorHandler: @escaping (Swift.String) -> Swift.Void)
+  public func setUserProperty(_ properties: [CarrotSDK.UserProperty])
+  public func trackEvent(withName name: Swift.String, withParams params: Swift.String)
+  public func showButton(in view: UIKit.UIView)
+  public func hideButton()
+  public func setButton(icon: UIKit.UIImage?)
+  public func getUnreadConversationsCount(_ resultHandler: @escaping (Swift.Int) -> Swift.Void)
+  public func getUnreadMessagesCount(_ resultHandler: @escaping (Swift.Int) -> Swift.Void)
+  public func show(_ notification: UserNotifications.UNNotification, appGroudDomain domain: Swift.String? = nil, completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class CarrotNotificationServiceExtension : UserNotifications.UNNotificationServiceExtension {
+  open var domainIdentifier: Swift.String?
+  open var apiKey: Swift.String?
+  open func setup()
+  @objc override dynamic open func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
+  @objc override dynamic open func serviceExtensionTimeWillExpire()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CarrotUserProperty : CarrotSDK.UserProperty {
+  public enum Property : Swift.String, Swift.Codable {
+    case name
+    case phone
+    case email
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init(key: CarrotSDK.CarrotUserProperty.Property, value: Swift.String, operation: CarrotSDK.UserProperty.Operations = .updateOrCreate)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EcommerceUserProperty : CarrotSDK.UserProperty {
+  public enum Property : Swift.String, Swift.Codable {
+    case cartAmount
+    case viewedProducts
+    case cartItems
+    case lastOrderStatus
+    case lastPayment
+    case revenue
+    case profit
+    case group
+    case discount
+    case ordersCount
+    case orderedItems
+    case orderedCategories
+    case viewedCategories
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init(key: CarrotSDK.EcommerceUserProperty.Property, value: Swift.String, operation: CarrotSDK.UserProperty.Operations = .updateOrCreate)
+  @objc deinit
+}
+public struct TextInput<Base> where Base : UIKit.UITextInput {
+}
+infix operator <<< : BitwiseShiftPrecedence
+infix operator >>> : BitwiseShiftPrecedence
+extension CarrotSDK.UserProperty.Operations : Swift.Equatable {}
+extension CarrotSDK.UserProperty.Operations : Swift.Hashable {}
+extension CarrotSDK.UserProperty.Operations : Swift.RawRepresentable {}
+extension CarrotSDK.Carrot.Theme : Swift.Equatable {}
+extension CarrotSDK.Carrot.Theme : Swift.Hashable {}
+extension CarrotSDK.CarrotUserProperty.Property : Swift.Equatable {}
+extension CarrotSDK.CarrotUserProperty.Property : Swift.Hashable {}
+extension CarrotSDK.CarrotUserProperty.Property : Swift.RawRepresentable {}
+extension CarrotSDK.EcommerceUserProperty.Property : Swift.Equatable {}
+extension CarrotSDK.EcommerceUserProperty.Property : Swift.Hashable {}
+extension CarrotSDK.EcommerceUserProperty.Property : Swift.RawRepresentable {}

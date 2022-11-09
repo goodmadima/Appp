@@ -17,6 +17,7 @@
 		0A3C8FBD2919F7A900B0169A /* ApppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C8FBC2919F7A900B0169A /* ApppTests.m */; };
 		0A3C8FC72919F7A900B0169A /* ApppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C8FC62919F7A900B0169A /* ApppUITests.m */; };
 		0A3C8FC92919F7A900B0169A /* ApppUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C8FC82919F7A900B0169A /* ApppUITestsLaunchTests.m */; };
+		C54DAF43EE6B5303D574796A /* libPods-Appp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F36DC0201896EF1BB7FAB5 /* libPods-Appp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,9 @@
 		0A3C8FC22919F7A900B0169A /* ApppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3C8FC62919F7A900B0169A /* ApppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApppUITests.m; sourceTree = "<group>"; };
 		0A3C8FC82919F7A900B0169A /* ApppUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApppUITestsLaunchTests.m; sourceTree = "<group>"; };
+		74F36DC0201896EF1BB7FAB5 /* libPods-Appp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Appp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86C725B990E4ED5CBA7EDB0A /* Pods-Appp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appp.debug.xcconfig"; path = "Target Support Files/Pods-Appp/Pods-Appp.debug.xcconfig"; sourceTree = "<group>"; };
+		B69AE29DC1C6F46B6CAD81BE /* Pods-Appp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appp.release.xcconfig"; path = "Target Support Files/Pods-Appp/Pods-Appp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54DAF43EE6B5303D574796A /* libPods-Appp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,8 @@
 				0A3C8FBB2919F7A900B0169A /* ApppTests */,
 				0A3C8FC52919F7A900B0169A /* ApppUITests */,
 				0A3C8F9E2919F7A500B0169A /* Products */,
+				A810619ED85AAD3F34DA0EFD /* Pods */,
+				14F7731E4897E92B4DE0947E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +143,23 @@
 			path = ApppUITests;
 			sourceTree = "<group>";
 		};
+		14F7731E4897E92B4DE0947E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74F36DC0201896EF1BB7FAB5 /* libPods-Appp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A810619ED85AAD3F34DA0EFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86C725B990E4ED5CBA7EDB0A /* Pods-Appp.debug.xcconfig */,
+				B69AE29DC1C6F46B6CAD81BE /* Pods-Appp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A3C8FCC2919F7A900B0169A /* Build configuration list for PBXNativeTarget "Appp" */;
 			buildPhases = (
+				A3EBA2B2F271FCE31E1D152D /* [CP] Check Pods Manifest.lock */,
 				0A3C8F992919F7A500B0169A /* Sources */,
 				0A3C8F9A2919F7A500B0169A /* Frameworks */,
 				0A3C8F9B2919F7A500B0169A /* Resources */,
+				CE5589285E4397F8C2FDA008 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +286,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A3EBA2B2F271FCE31E1D152D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Appp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE5589285E4397F8C2FDA008 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Appp/Pods-Appp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Appp/Pods-Appp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Appp/Pods-Appp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A3C8F992919F7A500B0169A /* Sources */ = {
@@ -437,11 +505,13 @@
 		};
 		0A3C8FCD2919F7A900B0169A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C725B990E4ED5CBA7EDB0A /* Pods-Appp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Appp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -463,11 +533,13 @@
 		};
 		0A3C8FCE2919F7A900B0169A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B69AE29DC1C6F46B6CAD81BE /* Pods-Appp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Appp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -1,0 +1,25 @@
+//
+//  CarrotSDK.modulemap
+//
+//
+//  Created by alonds build system
+//
+//
+
+framework module CarrotSDK {
+    umbrella header "CarrotSDK.h"
+    header "_RXDelegateProxy.h"
+    header "_RXObjCRuntime.h"
+    header "_RX.h"
+    header "_RXKVOObserver.h"
+//    export *
+//    explicit module Private {
+//        header "_RXDelegateProxy.h"
+//    }
+}
+
+
+module CarrotSDK.Swift {
+  header "CarrotSDK-Swift.h"
+  requires objc
+}

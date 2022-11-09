@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import <CarrotSDK/CarrotSDK-Swift.h>
 
 @interface AppDelegate ()
 
